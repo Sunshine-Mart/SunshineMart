@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="images/ss2.png" type="image/gif" sizes="16x16">
+    <title>Sunshine Mart</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+    <div class="card ">
+        <div class="card-header">
+
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand-sm">
+                <div class="container-fluid ">
+                    <nav class="navbar navbar-expand-sm navbar-light">
+                        <a class="navbar-brand" href="#">
+                            <img src="images/ss.png" width="40" height="40"
+                                class="d-inline-block align-top" alt="logo_borneo">
+                            <span class="d-none d-md-inline"><b style=" font-weight: 600;">Sunshine Mart</b></span>
+                        </a>
+                    </nav>
+                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarcollapse">
+                        <span class="navbar-toggler-icon">
+                        </span>
+                    </button>
+                </div>
+
+            </nav>
+            <!-- Navbar end -->
+
+        </div>
+
+        <div class="card-body">
+
+            <!-- View Pesanan start -->
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card shadow-lg border-0">
+                            <div class="card-body ">
+                                <div class="text-center">
+                                    <div class="text-center">
+                                        <img src="images/ss.png" class="rounded"
+                                            alt="Logo_Himaster" width="25%" height="auto">
+                                    </div>
+                                </div>
+                                <br>
+
+                                <!-- start Judul Form Pesanan Media Grafis -->
+                                <h4 class="card-title text-center mb-4 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="auto" fill="currentColor"
+                                        class="bi bi-envelope-plus" viewBox="0 0 16 16">
+                                        <path
+                                            d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z" />
+                                        <path
+                                            d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-3.5-2a.5.5 0 0 0-.5.5v1h-1a.5.5 0 0 0 0 1h1v1a.5.5 0 0 0 1 0v-1h1a.5.5 0 0 0 0-1h-1v-1a.5.5 0 0 0-.5-.5Z" />
+                                    </svg>
+                                    Form Order Pemesanan
+                                </h4>
+                                <!-- end Judul Form Pesanan Media Grafis -->
+
+                                <!-- start Form Pesanan -->
+                                <form id="form" method="POST" action="send_whatsapp.php">
+
+                                    <div class="form-group">
+                                        <div class="d-grid gap-2 p-2  mx-auto">
+                                            <div>
+                                                <label for="nama_konsumen">Nama Konsumen:</label>
+                                                <input type="text" name="nama_konsumen" class="form-control "
+                                                    placeholder="Isi nama dengan lengkap" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="d-grid gap-2 p-2  mx-auto">
+                                            <div>
+                                                <label for="no_whatsapp">No WhatsApp/HP:</label>
+                                                <input type="text" name="no_whatsapp" class="form-control "
+                                                    placeholder="Nomor Headphone" required>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="d-grid gap-2 p-2  mx-auto">
+                                            <div>
+                                                <label for="deskripsi_pemesanan">Deskripsi Pemesanan:</label>
+                                                <textarea type="text" name="deskripsi_pemesanan" class="form-control "
+                                                    rows="3"
+                                                    placeholder="contoh : Ayam 1 Kg, Ayam Utuh, Telur 2 Kg."
+                                                    required></textarea>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="d-grid gap-2 p-2  mx-auto">
+                                            <div>
+                                                <label for="jumlah_order">Jumlah Order:</label>
+                                                <input type="text" name="jumlah_order" class="form-control "
+                                                    placeholder="contoh : 1 " required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="d-grid gap-2 p-2  mx-auto">
+                                            <div>
+                                                <label for="alamat">Alamat:</label>
+                                                <input type="text" name="alamat" class="form-control "
+                                                    placeholder=" " required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div class="form-group">
+                                        <div class="d-grid gap-2 p-2  mx-auto">
+                                            <div>
+                                                <label for="basic-url" class="form-label">Notes</label>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z" />
+                                                    <path
+                                                        d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z" />
+                                                </svg>
+                                                <div class="input-group">
+                                                    <!-- <span class="input-group-text" id="basic-addon3">https://example.com/users/</span> -->
+                                                    <textarea type="text" class="form-control" name="link_url"
+                                                        id="basic-url" placeholder="link URL referensi"
+                                                        aria-describedby=" basic-addon3 basic-addon4"></textarea>
+                                                    <!-- <button class="btn btn-outline-secondary" type="button" id="hapus">Delete</button> -->
+                                                </div>
+                                                <div class="form-text" id="basic-addon4">Jika terdapat file pendukung
+                                                    bagi pesanan silahkan lampirkan berbentuk link.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="d-grid gap-2 p-2 mx-auto ">
+                                            <button type="submit" class="btn btn-success btn-lg btn-block">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                                                </svg>
+                                                Kirim ke WhatsApp
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- end Form Pesanan -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- View Pesanan end -->
+        </div>
+    </div>
+</body>
+
+<script>
+    // fungsi tombol hapus
+
+    // function deleteFile(id) {
+    // 	$(id).val('');
+    // }
+    // $(document).on('click','#hapus',function(){
+    // 	deleteFile('#basic-url');
+    // });
+
+
+    // start fungsi pada tanggal pesanan dipesan
+    const now = new Date();
+    const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    const months = [
+        'Januari',
+        'Februari',
+        'Maret',
+        'April',
+        'Mei',
+        'Juni',
+        'Juli',
+        'Agustus',
+        'September',
+        'Oktober',
+        'November',
+        'Desember',
+    ];
+
+    const dayOfWeek = days[now.getDay()];
+    const date = now.getDate();
+    const month = months[now.getMonth()];
+    const year = now.getFullYear();
+    const time = now.toLocaleTimeString('id-ID', { timeStyle: 'medium' });
+    // end fungsi pada tanggal pesanan dipesan
+
+
+    // start Fungsi form pada pengiriman pesan
+    $(document).ready(function () {
+
+
+        $('#form').on('submit', function (e) {
+            e.preventDefault();
+            if ($.trim($('input[name=nama_konsumen]').val()) === '' 
+            || $.trim($('input[name=no_whatsapp]').val()) === '' 
+            || $.trim($('textarea[name=deskripsi_pemesanan]').val()) === '' 
+            || $.trim($('input[name=jumlah_order]').val()) === '' 
+            || $.trim($('input[name=alamat]').val()) === '' 
+            ) {
+                Swal.fire('Error', 'Harap lengkapi semua data', 'error');
+                return;
+            } else {
+
+                Swal.fire({
+                    position: 'top-middle',
+                    icon: 'success',
+                    title: 'Data berhasil dikirim',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
+                var nama_konsumen = $('input[name=nama_konsumen]').val(); // Replace with actual value
+                var headphone = $('input[name=no_whatsapp]').val(); // Get the value from input field
+                var deskripsi = $('textarea[name=deskripsi_pemesanan]').val(); // Get the value from input field
+                var order = $('input[name=jumlah_order]').val(); // Get the value from input field
+                var alamat = $('input[name=alamat]').val(); // Get the value from input field
+                const waktu = `${dayOfWeek}, ${date} ${month} ${year}, Pukul: ${time}`;
+
+                if ($.trim($('textarea[name=link_url]').val()) === '') {
+
+                    Swal.fire({
+
+                        title: 'Apakah Anda Yakin?',
+                        text: "Data yang dikirim hanya data yang diisi?",
+                        icon: 'warning',
+                        confirmButtonColor: '#006400',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Kirim',
+                        showCancelButton: true,
+                        cancelButtonText: 'Batal',
+
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+
+                            Swal.fire({
+                                position: 'top-middle',
+                                icon: 'success',
+                                title: 'Data berhasil dikirim',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+
+
+                            // Check if the file input is not empty
+                            if ($.trim($('textarea[name=link_url]').val()) !== '') {
+                                var link = $('textarea[name=link_url]').val(); // Replace with actual value
+
+                            } else {
+                                var link = '*' + 'Tidak ada file tambahan' + '*'; // Set default message if file input is empty
+                                var nama_konsumen= $('input[name=nama_konsumen]').val(); // Replace with actual value
+                                var headphone = $('input[name=no_whatsapp]').val(); // Get the value from input field
+                                var deskripsi = $('textarea[name=deskripsi_pemesanan]').val(); // Get the value from input field
+                                var order = $('input[name=jumlah_order]').val(); // Get the value from input field
+                                var alamat = $('input[name=alamat]').val(); // Get the value from input field // Get the value from input field
+                                const waktu = `${dayOfWeek}, ${date} ${month} ${year}, Pukul: ${time}`;
+
+
+
+                                // Open the WhatsApp URL in a new tab
+                                var message =
+
+                                    "Halo saya Konsumen ingin melakukan pemesanan ke Sunshine Mart pada hari" + " " + "*" + waktu + " " + "WIB" + "*" + " " + " " +
+                                    ",atas Nama" + " " + " " + "*" + nama_konsumen + "*" + " " + " " +
+                                    "dengan Nomor Headphone" + " " + "*" + headphone + "*" + " " + " " +
+                                    "Untuk ketentuan permintaan akan saya sampaikan sebagai berikut.\n\n" +
+                                    "Jumlah" + "\t" + ":" + " " + order + "\n\n" +
+                                    "Alamat" + "\t" + ":" + " " + alamat + "\n\n" +
+                                    "Deskripsi Pemesanan:" + "\t" + ":" + " " + deskripsi + "\n\n" + 
+                                    "Data Tambahan" + "\t" + ":" + " " + link + "\n\n" + 
+                                    "Terimakasih atas bantuannya. Apabila ada lampiran gambar atau file akan kirimkan dibawah ini.";
+
+
+                                var url = "https://wa.me/6288289161542?text=" + encodeURIComponent(message);
+
+
+
+                               
+                                window.open(url, '_blank');
+                                setTimeout(function () {
+                                    window.location.reload();
+                                }, 5000); // 10 seconds
+                            }
+
+
+                        }
+                    });
+                    return;
+                }
+                // Open the WhatsApp URL in a new tab
+
+                var link = $('textarea[name=link_url]').val(); // Replace with actual value
+                var message =
+                "Halo saya Konsumen ingin melakukan pemesanan ke Sunshine Mart pada hari" + " " + "*" + waktu + " " + "WIB" + "*" + " " + " " +
+                ",atas Nama" + " " + " " + "*" + nama_konsumen + "*" + " " + " " +
+                "dengan Nomor Headphone" + " " + "*" + headphone + "*" + " " + " " +
+                "Untuk ketentuan permintaan akan saya sampaikan sebagai berikut.\n\n" +
+                "Jumlah" + "\t" + ":" + " " + order + "\n\n" +
+                "Alamat" + "\t" + ":" + " " + alamat + "\n\n" +
+                "Deskripsi Pemesanan:" + "\t" + ":" + " " + deskripsi + "\n\n" + 
+                "Data Tambahan" + "\t" + ":" + " " + link + "\n\n" + 
+                "Terimakasih atas bantuannya. Apabila ada lampiran gambar atau file akan kirimkan dibawah ini.";
+
+
+                var url = "https://wa.me/6288289161542?text=" + encodeURIComponent(message);
+
+
+                window.open(url, '_blank');
+                setTimeout(function () {
+                    window.location.reload();
+                }, 5000); // 10 seconds
+                // window.location.reload();
+            }
+
+        });
+    });
+	// end Fungsi form pada Pengiriman pesan
+</script>
+
+</html>
