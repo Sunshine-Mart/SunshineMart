@@ -122,6 +122,18 @@
                                         </div>
                                     </div>
                                     
+                                    
+                                    <div class="form-group">
+                                        <div class="d-grid gap-2 p-2  mx-auto">
+                                            <div>
+                                                <label for="Pembayaran">Pembayaran:</label>
+                                                <textarea type="text" name="pembayaran" class="form-control "
+                                                rows="4"
+                                                placeholder="1. 8720326419 BCA Juan Waeludin&#10;2. 089638909202 DANA Juan Waeludin&#10;3. COD&#10;" 
+                                                required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div class="form-group">
                                         <div class="d-grid gap-2 p-2  mx-auto">
@@ -217,7 +229,8 @@
             || $.trim($('input[name=no_whatsapp]').val()) === '' 
             || $.trim($('textarea[name=deskripsi_pemesanan]').val()) === '' 
             || $.trim($('input[name=jumlah_order]').val()) === '' 
-            || $.trim($('input[name=alamat]').val()) === '' 
+            || $.trim($('input[name=alamat]').val()) === ''
+            || $.trim($('textarea[name=pembayaran]').val()) === ''  
             ) {
                 Swal.fire('Error', 'Harap lengkapi semua data', 'error');
                 return;
@@ -235,7 +248,8 @@
                 var headphone = $('input[name=no_whatsapp]').val(); // Get the value from input field
                 var deskripsi = $('textarea[name=deskripsi_pemesanan]').val(); // Get the value from input field
                 var order = $('input[name=jumlah_order]').val(); // Get the value from input field
-                var alamat = $('input[name=alamat]').val(); // Get the value from input field
+                var alamat = $('input[name=alamat]').val(); 
+                var pembayaran = $('textarea[name=pembayaran]').val();// Get the value from input field
                 const waktu = `${dayOfWeek}, ${date} ${month} ${year}, Pukul: ${time}`;
 
                 if ($.trim($('textarea[name=link_url]').val()) === '') {
@@ -273,7 +287,8 @@
                                 var headphone = $('input[name=no_whatsapp]').val(); // Get the value from input field
                                 var deskripsi = $('textarea[name=deskripsi_pemesanan]').val(); // Get the value from input field
                                 var order = $('input[name=jumlah_order]').val(); // Get the value from input field
-                                var alamat = $('input[name=alamat]').val(); // Get the value from input field // Get the value from input field
+                                var alamat = $('input[name=alamat]').val(); 
+                                var pembayaran = $('textarea[name=pembayaran]').val();// Get the value from input field // Get the value from input field
                                 const waktu = `${dayOfWeek}, ${date} ${month} ${year}, Pukul: ${time}`;
 
 
@@ -287,6 +302,7 @@
                                     "Untuk ketentuan permintaan akan saya sampaikan sebagai berikut.\n\n" +
                                     "Jumlah" + "\t" + ":" + " " + order + "\n\n" +
                                     "Alamat" + "\t" + ":" + " " + alamat + "\n\n" +
+                                    "Pembayaran" + "\t" + ":" + " " + pembayaran + "\n\n" +
                                     "Deskripsi Pemesanan:" + "\t" + ":" + " " + deskripsi + "\n\n" + 
                                     "Data Tambahan" + "\t" + ":" + " " + link + "\n\n" + 
                                     "Terimakasih";
@@ -318,6 +334,7 @@
                 "Untuk ketentuan permintaan akan saya sampaikan sebagai berikut.\n\n" +
                 "Jumlah" + "\t" + ":" + " " + order + "\n\n" +
                 "Alamat" + "\t" + ":" + " " + alamat + "\n\n" +
+                "Pembayaran" + "\t" + ":" + " " + pembayaran + "\n\n" +
                 "Deskripsi Pemesanan:" + "\t" + ":" + " " + deskripsi + "\n\n" + 
                 "Data Tambahan" + "\t" + ":" + " " + link + "\n\n" + 
                 "Terimakasih.";
